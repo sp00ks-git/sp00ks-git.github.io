@@ -12,8 +12,8 @@ An automated Hashcat tool for common wordlists and rules to speed up the process
 
 Support for Linux and Windows from the respective repos.
 
-For Linux   - (https://github.com/sp00ks-git/hat)   
-For Windows - (https://github.com/sp00ks-git/hat-windows)
+Link For [Linux](https://github.com/sp00ks-git/hat)   
+Link For [Windows](https://github.com/sp00ks-git/hat-windows)
 
 
 All Hashes Supported by Hashcat are supported by HAT if you know the hascat ID:
