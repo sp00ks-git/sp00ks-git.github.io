@@ -25,14 +25,14 @@ NTLMv2 (NTHASH) -> NetNTLMv1 -> NetNTLMv2 -> MD5 -> SHA-512 -> RC4-HMAC-MD5 (Ker
 
 Features:
 
-- Straight Wordlist testing from publicy known breaches (dependant on your wordlists)   
-- Straight Wordlists using the Oxford Dictionary incrmementing through various combinations   
-- Common Rule sets used in corporate environments   
-- Smart ordering of compromised hashes alphabetically in (Username::Domain:Hash:Password) format.   
-- Visual hash cracking status showing you how many hashes you have left to crack   
-- Cewl Integration for finding specific words common to the business not found in dictionaries or breached lists   
-- Rsmangler Integration for finding permutations of a specific word that the firm might be using. (includes incrementing various combinations on either side)   
-- The directory structure that HAT expects is upto you, the default is:
+1. Straight Wordlist testing from publicy known breaches (dependant on your wordlists)   
+2. Straight Wordlists using the Oxford Dictionary incrmementing through various combinations   
+3.  Common Rule sets used in corporate environments   
+4.  Smart ordering of compromised hashes alphabetically in (Username::Domain:Hash:Password) format.   
+5.  Visual hash cracking status showing you how many hashes you have left to crack   
+6.  Cewl Integration for finding specific words common to the business not found in dictionaries or breached lists   
+7.  Rsmangler Integration for finding permutations of a specific word that the firm might be using. (includes incrementing various combinations on either side)   
+8.  The directory structure that HAT expects is upto you, the default is:
 
 -> /opt/worliststs/rockyou.txt   
 -> /opt/wordlists/1GB-4GB/   
