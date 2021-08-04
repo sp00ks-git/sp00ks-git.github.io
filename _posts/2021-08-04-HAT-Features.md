@@ -68,4 +68,15 @@ This menu was designed to simply show the username and passwords found and remov
 This menu will simple show the hashes that have been uploaded.
 
 
+MENU Examples
+=============
+
+Hash Upload Menu
+----------------
+![img-description]('https://camo.githubusercontent.com/2a77be8b2513c06ceb4c559dbc0da99fcaf6e8028c5f618a3dbc62b1fdf64eb0/68747470733a2f2f692e6962622e636f2f4763563377506d2f6861742d622e706e67')
+_This menus displays the files currently available_
+
+
+
 [HAT]: https://github.com/sp00ks-git/hat
+
