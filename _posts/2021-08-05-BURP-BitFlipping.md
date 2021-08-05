@@ -54,31 +54,3 @@ we have sucessfully logged in as admin.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Hash Upload Menu
-----------------
-![img-description](/images/hash-menu-1.png)
-_This menu displays the files currently in the uploads directory_ 
-
-
-![img-description](/images/Multi_Hash_Cracking_Menu.png)
-_Main Hash Cracking Menu Displaying Various Cracking Options_
-
-![img-description](/images/loot_directory.png)
-_Image L00t Directory Alphanumerically Organised By Name_
-
-[HAT]: https://github.com/sp00ks-git/hat
-
