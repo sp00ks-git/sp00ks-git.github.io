@@ -48,7 +48,7 @@ _We have the auth code for the user "admin" we know this because of the line "Yo
 Now we can replace our cookie from our browser using your favourite cookie manger. i use "Cookies Manager +" in Firefox.   
 
 ![img-description](/images/bit-flip-4.png)
-_we have now logged in as admin._
+_We've now logged in as admin_
 
 we have sucessfully logged in as admin.
 
