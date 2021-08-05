@@ -12,15 +12,13 @@ math: true
 
 Firstly make sure you update the wordlist directory to where you wordlists are and create the following directory's within.
 
-The directory structure that HAT expects is.. (of course you can just amend the code to your own needs)
+The directory structure that HAT expects by deafult is set out below (of course you can just amend the code to your own needs)
 
 * /opt/worliststs/rockyou.txt   
 * /opt/wordlists/1GB-4GB/   
 * /opt/wordlists/4GB+/   
 * /opt/wordlists/english-words/   
 * /opt/wordlists/merged_list/   
-
-The first menu options allows you to select either a single hash, - A hash you can simply paste or type in, Upload a Hash from a file, Input a Hash and filter out just usernames (useful for removing machine accounts from dumps), Input a Wireless Capture file, Run stats on hashes, display loot found in full, display loot key information and finally a list of the hashes that are uploaded from a given file.
 
 
 Menus
@@ -46,7 +44,7 @@ The purpose of this menu is when you have one or more hashes in a file and want 
 
 (2) Input Hash Dump & filter out usernames
 ------------------------------------------
-This menu is useful during in AD audit / engagement where you have machine accounts, accounts with a ($) as well as user accounts. Usually you dont want to attempt to crack machine accounts as they are by design long and complex. This menu will filter out all the machine accounts for you. A file will be created with a suffix of '_users' denoting this is users only.
+This menu is useful during AD audits / engagements where you have machine accounts, accounts with a ($) as well as user accounts. Usually you dont want to attempt to crack machine accounts as they are by design long and complex. This menu will filter out all the machine accounts for you and only try to crack user accounts. A crack file will be created with a suffix of '_users' denoting this is users only.
 
 (3) Input Wireless - Capture From File
 --------------------------------------
