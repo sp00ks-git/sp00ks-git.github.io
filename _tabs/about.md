@@ -16,9 +16,8 @@ The purpose of this site is to reflect on findings found during engagements and 
 
 If you would like to reach out to me please do so by using any of the following methods at the bottom left of the page, or the below:
 
-Email: 	     <sp00ks_secure@protonmail.oom>
-Twitter:     @__sp00ks__
-
-
+Email: 	     <sp00ks_secure@protonmail.com>      
+Twitter:     [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Follow%20%40bukotsunikki)](https://twitter.com/__sp00ks__)
 
 ![img-description](/images/20150404_152303.jpg)
+
