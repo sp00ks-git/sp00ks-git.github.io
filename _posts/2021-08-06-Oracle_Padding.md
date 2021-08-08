@@ -1,5 +1,5 @@
 ---
-title:  "Oracle Padding"
+title:  "Oracle Padding "
 date:   2021-08-05 21:15:00 +0100
 categories: [techniques]
 tags: [burp, web exploitation]
