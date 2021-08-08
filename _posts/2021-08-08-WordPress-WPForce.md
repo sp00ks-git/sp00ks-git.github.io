@@ -46,8 +46,6 @@ To start with, make sure you have the python 'Requests' HTTP libraries installed
 
 `pip install requests`
 
-[DOCS](http://docs.python-requests.org/en/master/user/install 'Documentation Here')
-
 Now we are set lets start..   
 
 `Arguments - -t URL, -u username, -p password, -v verbose, -li localhost, -lp localport, -r reverse or -i interactive, -a User Agent.`
