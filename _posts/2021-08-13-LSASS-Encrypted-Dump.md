@@ -1,5 +1,5 @@
 ---
-title:  "LSASS Enc Dump"
+title:  "LSASS Encrypted Dump"
 date:   2021-08-13 21:20:00 +0100
 categories: [techniques]
 tags: [windows, lsass]
@@ -10,7 +10,7 @@ There are many, many ways to dump the LSASS process in order to gather credentia
 
 Two ways I dump LSASS can be seen below.
 
-The first way is to invoke comsvcs.dll with rundll32.exe. Here is the original code with added zipping but not compressing the file as to not cuase potential corruption.
+The first way is to invoke comsvcs.dll with rundll32 - here is the original code with added zipping but not compressing the file as to not cuase potential corruption.
 
 ```
 $processes = Get-Process
