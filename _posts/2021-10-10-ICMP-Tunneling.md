@@ -16,8 +16,8 @@ During testing it was also noted that as from the time of testing amsi didnt det
 
 The setup uses a tradtional client / Server design. The server does require local admin rights. My setup was a Debian 10 Box with a Windows 10 client.
 
-Server (Debian) - 192.168.1.50
-Client (Win 10) - 192.168.1.239
+* Server (Debian) - 192.168.1.50
+* Client (Win 10) - 192.168.1.239
 
 
 Againg from the Github Page, ICMP - The data is broken up into bytes and base64 encoded and sent over the wire in an ICMP Type 8 ECHO request. the data is placed inside the data field of the packet. The ECHO requests are continuously made to the EgressAsess Server which receives the ICMP request and gathers the data and decodes it.
