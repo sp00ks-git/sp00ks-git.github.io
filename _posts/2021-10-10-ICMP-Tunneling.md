@@ -8,7 +8,7 @@ tags: [windows, ICMP, Data Extraction]
 I recently had a situation during an engagement where i needed to demonstrate that data could be extracted from the organisation. I wanted to exfil data without going over the internet for security as well as for ease of use duing the engagement and speed.
 The VPN when connected, and as expected, didn't allow local access as all routing went through the established tunnel first. However when the tunnel was disconnected the firewall would block all TCP and UDP access but would allow ICMP traffic to local subnets.
 This then led me to look into ICMP tunneling. I found various ways of gaining a reverse shell however data exfiltration was more tricky - this is where Egress Assess comes in.   
-From the Github Page -> [https://github.com/FortyNorthSecurity/Egress-Assessere](https://github.com/FortyNorthSecurity/Egress-Assess)
+From the Github Page -> [https://github.com/FortyNorthSecurity/Egress-Assess](https://github.com/FortyNorthSecurity/Egress-Assess)
 "Egress-Assess is a tool used to test egress data detection capabilities."
 
 Egress-Assess has many use cases for confirming if data can be extracted out of the network including HTTP, SMB, ICMP and more. It also has PowerShell and Python implementations for both server and client. This is good for us as its unliekly that we normally have PowerShell access on Windows based systems.
