@@ -3,9 +3,6 @@ title:  "HAT - Hashcat Automation Tool - Features"
 date:   2021-08-04 19:35:00 +0000
 categories: [tools, hat]
 tags: [tools, cracking, hat]
-comments: true
-math: true
-
 ---
 
 [HAT] was built out of the need to quickly automate multiple different attacks with a higher likelihood of success based on known information about the hash or by testing what users are more likely to do, especially in the case of AD NTLM hashes.

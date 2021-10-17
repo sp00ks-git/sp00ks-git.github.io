@@ -2,7 +2,7 @@
 title:  "Reverse Shell in Wordpress with WPForce"
 date:   2021-08-08 18:20:00 +0000
 categories: [techniques]
-tags: [web exploitation,wordpress]
+tags: [web exploitation, wordpress]
 ---
 
 

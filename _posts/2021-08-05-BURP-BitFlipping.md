@@ -3,8 +3,6 @@ title:  "BURP - Bit Flipping"
 date:   2021-08-05 19:30:00 +0000
 categories: [techniques, website testing]
 tags: [burp, web explotion]
-comments: false
-math: false
 ---
 
 Bit Flipping

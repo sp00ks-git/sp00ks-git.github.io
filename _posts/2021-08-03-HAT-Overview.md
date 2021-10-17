@@ -3,9 +3,6 @@ title:  "HAT - Hashcat Automation Tool"
 date:   2021-08-03 21:21:20 +0000
 categories: [tools, hat]
 tags: [tools, cracking, hat]
-comments: true
-math: true
-
 ---
 
 An automated Hashcat tool for common wordlists and rules to speed up the process of cracking hashes during engagements. HAT is simply a wrapper for [hashcat] (with a few extra features), however I take no credit for that superb tool.
