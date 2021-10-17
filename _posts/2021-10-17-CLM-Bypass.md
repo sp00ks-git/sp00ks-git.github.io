@@ -1,5 +1,5 @@
 ---
-title:  "Bypassing CLM"
+title:  "CLM Bypass"
 date:   2021-10-17 19:00:00 +0000
 categories: [techniques]
 tags: [windows, PowerShell]
