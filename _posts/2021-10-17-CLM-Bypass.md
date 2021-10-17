@@ -2,7 +2,7 @@
 title:  "CLM Bypass"
 date:   2021-10-17 19:00:00 +0000
 categories: [techniques]
-tags: [windows, PowerShell]
+tags: [windows, powershell
 ---
 
 It is common during engagements to find that CLM (Constrained Language Mode) is configured on PowerShell as a SafeGuard or control against malicous activity.
