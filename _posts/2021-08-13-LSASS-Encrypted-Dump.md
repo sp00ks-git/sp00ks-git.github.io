@@ -12,7 +12,6 @@ Two ways I dump LSASS can be seen below.
 
 The first way is to invoke comsvcs.dll with rundll32 - here is the original code with added zipping but not compressing the file as to not cuase potential corruption.
 
-{% include codeHeader.html %}
 ```
 $processes = Get-Process
 $location = Get-Location
