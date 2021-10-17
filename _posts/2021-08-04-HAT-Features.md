@@ -1,6 +1,6 @@
 ---
 title:  "HAT - Hashcat Automation Tool - Features"
-date:   2021-08-04 19:35:00 +0100
+date:   2021-08-04 19:35:00 +0000
 categories: [tools, hat]
 tags: [tools, cracking, hat]
 comments: true

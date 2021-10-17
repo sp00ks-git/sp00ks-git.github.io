@@ -1,6 +1,6 @@
 ---
 title:  "LSASS Encrypted Dump"
-date:   2021-08-13 21:20:00 +0100
+date:   2021-08-13 21:20:00 +0000
 categories: [techniques]
 tags: [windows, lsass]
 ---
