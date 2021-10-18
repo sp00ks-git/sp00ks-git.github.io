@@ -27,7 +27,6 @@ To start firstly, confirm that you can send and receive ICMP echo requests and R
 
 Once confirmed, on the server, first clone down the repository.
 
-{% include codeHeader.html %}
 ```
 git clone https://github.com/FortyNorthSecurity/Egress-Assess.git
 ```

