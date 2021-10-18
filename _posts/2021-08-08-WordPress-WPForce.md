@@ -81,4 +81,3 @@ We receive the meterpreter session in metasploit.
 _Interactive Shell_
 
 Now we can continue our enumeration from Metasploit.   
-
