@@ -1,8 +1,8 @@
 ---
-title:  "ICMP Tunneling"
-date:   2021-10-10 19:12:00 +0000
+title:  "CLM Bypass"
+date:   2021-10-17 19:12:00 +0000
 categories: [techniques]
-tags: [windows, ICMP, Data Extraction]
+tags: [windows, powershell, bypass]
 ---
 
 I recently had a situation during an engagement where i needed to demonstrate that data could be extracted from the organisation. I wanted to exfil data without going over the internet for security as well as for ease of use duing the engagement and speed.
