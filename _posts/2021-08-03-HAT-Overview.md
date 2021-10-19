@@ -15,10 +15,12 @@ Link For [Windows](https://github.com/sp00ks-git/hat-windows)
 
 All Hashes Supported by Hashcat are supported by HAT if you know the HashMode:
 
-Examples Include:
+Common Examples Include:
 
 NTLMv2 (NTHASH) -> NetNTLMv1 -> NetNTLMv2 -> MD5 -> SHA-512 -> RC4-HMAC-MD5 (Kerberoasting)
 
+FEATURES
+========
 
 Features:
 
@@ -37,8 +39,9 @@ Features:
 -> /opt/wordlists/english-words/   
 -> /opt/wordlists/merged_list/   
 
+WORDLISTS
+=========
 Suggested Wordlists download links (HTTP) - working as of 14/10/2019 (maybe out of date now but some should still be working)   
-
 
 * [rockyou] - https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt (~14,300,000 words)   
 * [rocktastic12a] - http://www.mediafire.com/file/9tf3n2d45tgktq1/Rocktastic12a.7z/file (1.37GB - Compressed)   
@@ -65,6 +68,9 @@ Suggested Wordlists download links (HTTP) - working as of 14/10/2019 (maybe out 
 [b0n3z]: https://download.g0tmi1k.com/wordlists/large/b0n3z-wordlist-sorted-something.tar.gz (165 GB)   
 [sheez]: http://download1568.mediafire.com/yuh4jmehecwg/8oazhwqzexid771/WordlistBySheez_v8.7z (166.17 GB)   
 [hashkiller]: http://hashkiller.io/downloads/hashkiller-dict-2020-01-26.7z   
+
+CONTRIBUTORS
+============
 
 Thanks to:
 
