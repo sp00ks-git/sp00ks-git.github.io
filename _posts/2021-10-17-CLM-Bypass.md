@@ -64,8 +64,8 @@ Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value $CurrTemp
 
 Or if you want to change the PowerShell version then simply add the arguments as per above.
 
-PowerShell Specific
--------------------
+PowerShell Specific Version
+---------------------------
 
 ```
 $CurrTemp = $env:temp
