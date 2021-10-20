@@ -42,6 +42,8 @@ There are tools out there to help ofcourse, these are usually execuable files wh
 
 The following method can be simply pasted into a PowerShell window and a new PowerShell session is spawned as either the current PowerShell Version, or if needed, you could change the version to any other (2,3,4,5,6,7)
 
+PowerShell Default Example
+--------------------------
 
 ```
 $CurrTemp = $env:temp
@@ -61,6 +63,9 @@ Set-ItemProperty -Path 'hkcu:\Environment' -Name Temp -Value $CurrTemp
 ```
 
 Or if you want to change the PowerShell version then simply add the arguments as per above.
+
+PowerShell Specific
+-------------------
 
 ```
 $CurrTemp = $env:temp
