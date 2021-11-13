@@ -39,6 +39,13 @@ There are tools out there to help ofcourse, these are usually execuable files wh
 
 The following method can be simply pasted into a PowerShell window and a new PowerShell session is spawned as either the current PowerShell Version, or if needed, you could change the version to any other (2,3,4,5,6,7)
 
+Below is an example of bypassing CLM when Constrained Language mode is enabled by default.
+
+<video width="380" height="340" controls>
+  <source type="video/mp4" src="/videos/CLM-Bypass.gif"></source>
+<p>Your browser does not support the video element.</p>
+</video>
+
 CLM Bypass Default
 ------------------
 
