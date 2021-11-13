@@ -41,10 +41,8 @@ The following method can be simply pasted into a PowerShell window and a new Pow
 
 Below is an example of bypassing CLM when Constrained Language mode is enabled by default.
 
-<video width="380" height="340" controls>
-  <source type="video/mp4" src="/videos/CLM-Bypass.gif"></source>
-<p>Your browser does not support the video element.</p>
-</video>
+![img-description](/videos/CLM-Bypass.gif)
+_executing the script_
 
 CLM Bypass Default
 ------------------
