@@ -41,7 +41,7 @@ The following method can be simply pasted into a PowerShell window and a new Pow
 
 Below is an example of bypassing CLM when Constrained Language mode is enabled by default.
 
-![img-description](/videos/CLM-Bypass.gif)
+![img-description](/videos/CLM-Bypass-2.gif)
 _executing the script_
 
 CLM Bypass Default
