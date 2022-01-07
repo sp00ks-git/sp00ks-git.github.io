@@ -30,12 +30,18 @@ Once confirmed, on the server, first clone down the repository.
 ```
 git clone https://github.com/FortyNorthSecurity/Egress-Assess.git
 ```
+Firstly install pyftpdlib with pip
+
+```
+pip install pyftpdlib
+```
 
 Next run the setup.sh from within the setup folder to install the necessasary files.
 Fix any errors if you get any before continuing.
 
 ```
-./setup/.setup.sh
+cd /setup
+./setup.sh
 ```
 
 Next start the server with the ICMP fetaures enabled:
