@@ -14,7 +14,7 @@ However as these are common and AV is looking for fingerprints of these tools an
 
 The powershell script of choice was made by CyberArk over 7 years ago. This tool of choice is known as RiskySPNs and is made up of two files. The enumeration file and the cipher extraction file.
 
-You can find more informaiton on these on their git hub page here -> [https://github.com/cyberark/RiskySPN] (https://github.com/cyberark/RiskySPN) 
+You can find more informaiton on these on their git hub page here -> [https://github.com/cyberark/RiskySPN](https://github.com/cyberark/RiskySPN) 
 
 
 Next I've already taken both of these files and encrypted them using xencrypt with 50 iterations.
@@ -66,14 +66,5 @@ $mywfquy.Dispose()
 $sfxtpk = [System.Text.Encoding]::UTF8.GetString($eeck.ToArray())
 $bjmjws.Close()
 IEX($sfxtpk)
-```
-
-
-
-
-
-
-```
-
 ```
 
