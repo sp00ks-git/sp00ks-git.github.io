@@ -25,7 +25,7 @@ You can simply copy and paste both of the below scripts into a powershell window
 Once done run the following:
 
 ```
-Find-PotentiallyCrackableAccounts -Stealth -GetSPNs | Get-TGSCipher
+Find-PotentiallyCrackableAccounts -Stealth -GetSPNs | Get-TGSCipher -Format Hashcat
 ```
 
 Here is the outcome of the file enueration scripts "Find-PotentiallyCrackableAccounts.ps1":
