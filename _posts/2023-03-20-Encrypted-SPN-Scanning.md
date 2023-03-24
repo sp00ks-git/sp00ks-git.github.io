@@ -19,14 +19,15 @@ You can find more informaiton on these on their git hub page here -> [https://gi
 
 Next I've already taken both of these files and encrypted them using xencrypt with 50 iterations.
 
-Xencrypt - [https://github.com/the-xentropy/xencrypt] (https://github.com/the-xentropy/xencrypt)
+Xencrypt - [https://github.com/the-xentropy/xencrypt](https://github.com/the-xentropy/xencrypt)
 
 You can simply copy and paste both of the below scripts into a powershell window - make sure you run a AMSI BYPASS FIRST!!
 
 
 UPDATE:
 
-better-Xencrypt - [https://github.com/sp00ks-git/BetterXencrypt/blob/main/betterxencrypt.ps1] (https://github.com/sp00ks-git/BetterXencrypt/blob/main/betterxencrypt.ps1)
+BetterXencrypt - [https://github.com/GetRektBoy724/BetterXencrypt](https://github.com/GetRektBoy724/BetterXencrypt)
+
 Better Xencrypt can be used in the same way but seems to be, well, slightly better in terms of encryption strength however it would still get caught if an AMSI bypass was not ran before hand so the actual advantages are minimal but here is the code in any case:
 
 
