@@ -23,7 +23,7 @@ Xencrypt - [https://github.com/the-xentropy/xencrypt](https://github.com/the-xen
 
 You can simply copy and paste both of the below scripts into a powershell window - make sure you run a AMSI BYPASS FIRST!!
 
-Heres an exmaple of the output:
+Here's an example of the output using the test SPN (http/www.test.com):
 ![img-description](/images/encrypted_spns_1.PNG)
 
 
