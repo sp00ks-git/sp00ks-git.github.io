@@ -208,12 +208,6 @@ $jdxcbw.Close()
 Invoke-Expression($nvnhppd)
 ```
 
-```
-
-```
-
-
-
 Here is the outcome of the TGS Cipher extraction "Get-TGSCipher.ps1"
 
 ```
