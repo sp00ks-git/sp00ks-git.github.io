@@ -23,6 +23,9 @@ Xencrypt - [https://github.com/the-xentropy/xencrypt](https://github.com/the-xen
 
 You can simply copy and paste both of the below scripts into a powershell window - make sure you run a AMSI BYPASS FIRST!!
 
+Heres an exmaple of the output:
+![img-description](/images/encrypted_spns_1.PNG)
+
 
 UPDATE:
 
@@ -33,7 +36,7 @@ Better Xencrypt can be used in the same way but seems to be, well, slightly bett
 
 
 
-For Better-Xencrypt:
+For BetterXencrypt:
 Find-PotentiallyCrackableAccounts
 ```
 $tipgthzyzqq = (Get-Process -Id $PID | Select-Object Name,@{Name="WorkingSet";Expression={($_.ws / 1024kb)}}).WorkingSet
