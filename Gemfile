@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 #gem "jekyll-theme-chirpy", "~> 4.3", ">= 4.3.4" WORKING - REVERT TO THIS
 #gem "jekyll-theme-chirpy", "~>5.4.0"# WORKING - USE to RESTORE
-gem "jekyll-theme-chirpy", "~>5.6.0"
+gem "jekyll-theme-chirpy", "~>5.6.0" # test
+
 
 group :jekyll_plugins do
   # If you have any plugins, put them here!
