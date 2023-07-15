@@ -1,6 +1,6 @@
 ---
 title:  "Evasion Tools"
-date:   2023-15-07 23:00:00 +0000
+date:   2023-07-15 23:00:00 +0000
 categories: [tools]
 tags: [tools, evasion, edr_bypass]
 ---
