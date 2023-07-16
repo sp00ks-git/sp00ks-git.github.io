@@ -1,6 +1,6 @@
 ---
 title:  "Evasion Tools"
-date:   2023-07-15 23:00:00 +0000
+date:   2023-07-16 10:00:00 +0000
 categories: [tools]
 tags: [tools, evasion, edr_bypass]
 ---
@@ -10,7 +10,7 @@ A list of tools to bypass EDR using a variety of evasion techniques.
 
 
 
-PwnPowerShelle
+PwnPowerShell
 =========
 
 
