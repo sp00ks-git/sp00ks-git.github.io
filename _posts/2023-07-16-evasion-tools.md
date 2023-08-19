@@ -14,7 +14,7 @@ PwnPowerShell
 =============
 
 
-* [GH - Signed] - https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/PwnPowerSh3ll-Signed.exe
+* [GH - Signed] - https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/pjutvtn.exe.Signed.exe
 * [MU - Signed] - https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 
 
@@ -34,7 +34,7 @@ Rubeus
 
 
 
-[GH - Signed]: https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/PwnPowerSh3ll-Signed.exe   
+[GH - Signed]: https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/pjutvtn.exe.Signed.exe   
 [MU - Signed]: https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 
 
