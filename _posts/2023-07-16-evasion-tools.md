@@ -17,7 +17,7 @@ PwnPowerShell
 * [GH - Signed] - https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/pjutvtn.exe.Signed.exe
 * [MU - Signed] - https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 * [GH - Un-Signed] - https://github.com/sp00ks-git/obfuscated-Encrypted-2023/blob/gh-pages/InteractivePS-defender-clean.exe
-
+* [MU - Un-Signed] - https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 
 
 Rubeus
@@ -38,6 +38,7 @@ Rubeus
 [GH - Signed]: https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/pjutvtn.exe.Signed.exe   
 [MU - Signed]: https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 [GH - Un-Signed]: https://github.com/sp00ks-git/obfuscated-Encrypted-2023/blob/gh-pages/InteractivePS-defender-clean.exe
+[MU - Un-Signed]: https://mega.nz/file/e2gwGIJS#ivCiaYAmi_w_PZz5EPGrehJ2GPlUgEOY1kNphx0nkeQ
 
 
 [GH - Rubeus hardcoded with "kerberoast" signed binary]: https://github.com/sp00ks-git/obfuscated-Encrypted-2023/raw/gh-pages/bsomtsssohk.exe.Signed.exe
